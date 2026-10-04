@@ -20,11 +20,13 @@ jobs:
       uses: gradle/actions/setup-gradle@v3
 
     - name: Build with Gradle
+      # আপনার মূল ফোল্ডারের নাম অনুযায়ী path দিন
       run: gradle assembleDebug
+      working-directory: ./FootballVARPro-Stage1
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: FootballVARPro-Stage1/app/build/outputs/apk/debug/app-debug.apk
         
